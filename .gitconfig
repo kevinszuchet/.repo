@@ -1,0 +1,20 @@
+[user]
+	email = kevinszuchet@gmail.com
+	username = kevinszuchet
+	name = Kevin Szuchet
+[alias]
+  uncommit = reset HEAD~1
+  co = checkout
+  br = branch
+  st = status -sb
+  aa = add -A .
+  cm = commit -m
+  amend = commit --amend
+  cdf = clean -df
+  mt = mergetool
+  opts = config --list
+  plog = log --pretty=oneline --graph --abbrev-commit
+  glog = log --pretty=format:'%an :: %s' --graph
+  ra = rebase --abort
+  rc = rebase --continue
+  rs = rebase --skip
