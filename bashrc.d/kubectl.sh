@@ -1,5 +1,5 @@
 if which kubectl >/dev/null 2>&1 ; then
-  echo 'source <(kubectl completion bash)' >>~/.bashrc
+  source <(kubectl completion bash)
 
   alias k="kubectl"
   alias kgp="kubectl get pods"
