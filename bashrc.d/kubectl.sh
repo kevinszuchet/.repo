@@ -1,3 +1,5 @@
+echo 'source <(kubectl completion bash)' >>~/.bashrc
+
 alias k="kubectl"
 alias kgp="kubectl get pods"
 alias kufront="kubectl config use-context kuberneteca-front"
