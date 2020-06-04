@@ -21,7 +21,7 @@ else
   }
 
   parse_git_branch() {
-    echo -n $(git branch --no-color 2>/dev/null | awk -v out=$1 '/^*/ { if(out=="") print $2; else print out}')
+    echo -n $(git branch --no-color 2>/dev/null | awk -v out=$1 '/^$/ { if(out=="") print $2; else print out}')
   }
 
   # \e: an ASCII escape character (033)
