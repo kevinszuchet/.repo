@@ -20,3 +20,6 @@ disabled = false
 symbol = "⛵ "
 style = "dim green"
 disabled = false
+
+[haskell]
+symbol = " "
