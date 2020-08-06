@@ -21,6 +21,7 @@ if which kubectl >/dev/null 2>&1 ; then
   alias kx="kubectl exec -it"
   alias wktn="watch kubectl top nodes"
   alias wktp="watch kubectl top pods"
+  alias kaws="kubectl config use-context arn:aws:eks:us-east-1:372376101692:cluster/kuberneteca" 
 
   klw() {
     if [ -z $1 ] ; then
@@ -50,6 +51,13 @@ if which kubectl >/dev/null 2>&1 ; then
       echo "Configmap name needed!" && return 0;
     fi
     kubectl create configmap $1-config --from-env-file=$1.properties
+  }
+  
+  kcliconfig() {
+    if [ -z $1 ] ; then
+      echo "Configmap name needed!" && return 0;
+    fi
+    kubectl edit hpa $1 
   }
   
   ksh() {
