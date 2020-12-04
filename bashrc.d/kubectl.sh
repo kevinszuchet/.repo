@@ -22,6 +22,7 @@ if which kubectl >/dev/null 2>&1 ; then
   alias wktn="watch kubectl top nodes"
   alias wktp="watch kubectl top pods"
   alias kaws="kubectl config use-context arn:aws:eks:us-east-1:372376101692:cluster/kuberneteca" 
+  alias kawsf="kubectl config use-context arn:aws:eks:us-east-1:372376101692:cluster/kuberneteca-front"
 
   klw() {
     if [ -z $1 ] ; then
