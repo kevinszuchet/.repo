@@ -1,5 +1,7 @@
 if which kubectl >/dev/null 2>&1 ; then
-  source <(kubectl completion bash)
+  if [ ! -f /etc/bash_completion.d/kubectl ]; then
+  	kubectl completion bash | sudo tee /etc/bash_completion.d/kubectl > /dev/null
+  fi
 
   alias k="kubectl"
   # CONTEXT SWITCHES
