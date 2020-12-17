@@ -4,6 +4,7 @@ if which kubectl >/dev/null 2>&1 ; then
   fi
 
   alias k="kubectl"
+  complete -F __start_kubectl k
   # CONTEXT SWITCHES
   alias kc="kubectl config current-context"
   alias kufront="kubectl config use-context kuberneteca-front"
