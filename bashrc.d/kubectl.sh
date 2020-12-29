@@ -144,4 +144,18 @@ if which kubectl >/dev/null 2>&1 ; then
       kgpn $A_NODE
     done
   }
+
+  kcl() {
+    if [ -z $1 ] ; then
+      echo "Label needed!" && return 0;
+    fi
+    kubectl get no -l $1 --no-headers | wc -l
+  }
+
+  kclng() {
+    if [ -z $1 ] ; then
+      echo "NodeGroup type needed!" && return 0;
+    fi
+    kcl alpha.eksctl.io/nodegroup-name=private-$1-2vcpu-8gb-v16
+  }
 fi
