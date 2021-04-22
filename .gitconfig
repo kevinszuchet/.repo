@@ -18,3 +18,5 @@
 	ra = rebase --abort
 	rc = rebase --continue
 	rs = rebase --skip
+	pom = pull origin master
+	poma = pull origin main

@@ -15,6 +15,7 @@ if which kubectl >/dev/null 2>&1 ; then
   alias kungfu="kubectl config use-context kuberneteca-functions-2"
   alias kaws="kubectl config use-context arn:aws:eks:us-east-1:372376101692:cluster/kuberneteca" 
   alias kawsf="kubectl config use-context arn:aws:eks:us-east-1:372376101692:cluster/kuberneteca-front"
+  alias kawsf2="kubectl config use-context arn:aws:eks:us-east-1:372376101692:cluster/kuberneteca-front-2"
   alias kuka="kubectl config use-context kuberneteca-knative"
   # UTILS
   alias kgp="kubectl get pods"
