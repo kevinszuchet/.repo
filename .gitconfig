@@ -1,7 +1,7 @@
 [user]
 	email = kevinszuchet@gmail.com
 	username = kevinszuchet
-	name = Kevin Szuchet
+	name = kevinszuchet
 [alias]
 	uncommit = reset HEAD~1
 	co = checkout

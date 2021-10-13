@@ -31,6 +31,7 @@ if which kubectl >/dev/null 2>&1 ; then
   alias kx="kubectl exec -it"
   alias krep='kubectl get deploy --sort-by "spec.replicas"'
   alias kdev="kubectl get pods | grep 'Evicted' | awk '{print \$1}' | xargs kubectl delete pod"
+  alias ktnet="kubetailnet"
   # SPOT and ON DEMAND
   alias kspot="kubectl get no -l eks.amazonaws.com/capacityType=SPOT"
   alias kdem="kubectl get no -l producteca/nodegroup-type=ondemand"
