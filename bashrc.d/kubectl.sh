@@ -17,6 +17,8 @@ if which kubectl >/dev/null 2>&1 ; then
   alias kawsf="kubectl config use-context arn:aws:eks:us-east-1:372376101692:cluster/kuberneteca-front"
   alias kawsf2="kubectl config use-context arn:aws:eks:us-east-1:372376101692:cluster/kuberneteca-front-2"
   alias kuka="kubectl config use-context kuberneteca-knative"
+  alias kwin="kubectl config use-context arn:aws:eks:us-east-1:372376101692:cluster/kuberneteca-windows"
+  alias kaws2="kubectl config use-context arn:aws:eks:us-east-1:372376101692:cluster/kuberneteca-2" 
   # UTILS
   alias kgp="kubectl get pods"
   alias ktp="kubectl top pods"
@@ -37,6 +39,18 @@ if which kubectl >/dev/null 2>&1 ; then
   alias kdem="kubectl get no -l producteca/nodegroup-type=ondemand"
   alias kspotcount="kubectl get no -l eks.amazonaws.com/capacityType=SPOT --no-headers | wc -l"
   alias kdemcount="kubectl get no -l producteca/nodegroup-type=ondemand --no-headers | wc -l"
+
+  # Redis
+  alias rasl="redis-aws-second-level"
+  alias rasli="redis-aws-second-level-it"
+
+  redis-aws-second-level() {
+    kubectl --context arn:aws:eks:us-east-1:372376101692:cluster/kuberneteca-2 exec my-redis -- redis-cli -h second-level-cache-aws.wa2f8l.ng.0001.use1.cache.amazonaws.com "$@"
+  }
+
+  redis-aws-second-level-it() {
+    kubectl --context arn:aws:eks:us-east-1:372376101692:cluster/kuberneteca-2 exec -it my-redis -- redis-cli -h second-level-cache-aws.wa2f8l.ng.0001.use1.cache.amazonaws.com "$@"
+  }
 
   klw() {
     if [ -z $1 ] ; then
@@ -160,4 +174,9 @@ if which kubectl >/dev/null 2>&1 ; then
     fi
     kcl alpha.eksctl.io/nodegroup-name=private-$1-2vcpu-8gb-v16
   }
+
+  # Kubecolor
+  command -v kubecolor >/dev/null 2>&1 && alias kubectl="kubecolor"
+
+  export PATH="$PATH:/home/kevinszuchet/istio-1.12.1/bin"
 fi
